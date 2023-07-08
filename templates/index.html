@@ -28,9 +28,11 @@
 
     <center>
         <div>
-            <h2>Prediksi Harga Penutup Saham</h2>
+            <h1>Sudahi SLOT mu mari prediksi Bersama ku, canda slot :v</h1>
+            <h2>Prediksi Harga Penutup Saham APPLE</h2>
             <p>Estimation by IBM Watson Machine Learning and AutoAI.</p>
             <p>Fill out the form to see an estimate.</p>
+
         </div>
     </center>
 
@@ -60,10 +62,8 @@
         </table>
         <input id="submit" style="margin-bottom: 10px;" name="submit" type="submit" onclick="startSpinner()"
             value="Predict">
-
         <br>
     </form>
-
     <div class="d-flex justify-content-center">
         <div id="loader" style="color:black; display: none;" class="spinner-border"></div>
     </div>
@@ -75,6 +75,59 @@
             </div>
         </center>
     </div>
+
+
+    <form class="text-center" method="POST" action="/time">
+        <table width="100%">
+            <tbody>
+                <tr>
+                    <td>
+                        <div class="form-field ">{{ form.date1.label }} {{ form.date1 }}</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="form-field ">{{ form.date2.label }} {{ form.date2 }}</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="form-field ">{{ form.date3.label }} {{ form.date3 }}</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="form-field ">{{ form.date4.label }} {{ form.date4 }}</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="form-field ">{{ form.date5.label }} {{ form.date5 }}</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <input id="submit" style="margin-bottom: 10px;" name="submit" type="submit" onclick="startSpinner2()"
+            value="Predict">
+        <br>
+    </form>
+
+    <div class="d-flex justify-content-center">
+        <div id="loader1" style="color:black; display: none;" class="spinner-border"></div>
+    </div>
+    <div class="output-container">
+        <center>
+            <div id="output">
+                <h3 id="a">Predicted Close Price: </h3>
+                <h5 id="b">Hari ke 1 : ${{ form.close_date_1 }}</h5>
+                <h5 id="b">Hari ke 2 : ${{ form.close_date_2 }}</h5>
+                <h5 id="b">Hari ke 3 : ${{ form.close_date_3 }}</h5>
+                <h5 id="b">Hari ke 4 : ${{ form.close_date_4 }}</h5>
+                <h5 id="b">Hari ke 5 : ${{ form.close_date_5 }}</h5>
+            </div>
+        </center>
+    </div>
+
 
     <center>
         <img src="static/diagram.png" alt="arch-diagram">
@@ -103,8 +156,24 @@
                 a.style.display = "block"
                 b.style.display = "block"
             }, 3000);
-
         }
+        function startSpinner2() {
+                var x = document.getElementById("loader1");
+                x.style.display = "block";
+                var output = document.getElementById("output");
+                output.style.display = "none"
+                setTimeout(function () {
+                    var y = document.getElementById("output");
+                    var x = document.getElementById("loader1");
+                    var a = document.getElementById("a");
+                    var b = document.getElementById("b");
+                    x.style.display = "none";
+                    y.style.display = "block"
+                    a.style.display = "block"
+                    b.style.display = "block"
+                }, 3000);
+
+            }
     </script>
 
 </body>
