@@ -63,7 +63,7 @@ def predict():
         return render_template('index.html', form=form)
 
 
-@app.route('/time', methods=('GET', 'POST'))
+@app.route('/bytime', methods=('GET', 'POST'))
 def predicttime():
     form = PredictForm()
     if form.submit():
@@ -77,11 +77,16 @@ def predicttime():
         # NOTE: generate iam_token and retrieve ml_instance_id based on provided documentation
         header = {'Content-Type': 'application/json',
                   'Authorization': 'Bearer ' + imtoken, }
-        python_object1 = [form.date1.data]
-        python_object2 = [form.date2.data]
-        python_object3 = [form.date3.data]
-        python_object4 = [form.date4.data]
-        python_object5 = [form.date5.data]
+        python_object1 = [form.date1.data,
+                          float(), float(), float(), float(), int()]
+        python_object2 = [form.date2.data,
+                          float(), float(), float(), float(), int()]
+        python_object3 = [form.date3.data,
+                          float(), float(), float(), float(), int()]
+        python_object4 = [form.date4.data,
+                          float(), float(), float(), float(), int()]
+        python_object5 = [form.date5.data,
+                          float(), float(), float(), float(), int()]
         # Transform python objects to  Json
 
         userInput = []
